@@ -1,0 +1,13 @@
+{
+  "name": "act-2",
+  "version": "1.0.0",
+  "description": "Repositorio de prácticas con Node.js (lectura, escritura y consumo de API)",
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.mjs",
+    "escribir": "node escribirArchivo.mjs",
+    "leer": "node lecturaArchivo.mjs",
+    "api": "node lecturaApi.mjs"
+  }
+}
