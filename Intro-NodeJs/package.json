@@ -1,12 +1,13 @@
 {
   "name": "intro-nodejs",
   "version": "1.0.0",
-  "description": "Proyecto Node clase AW2",
-  "main": "ejec.js",
-  "type": "module",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node ejec.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module"
 }
