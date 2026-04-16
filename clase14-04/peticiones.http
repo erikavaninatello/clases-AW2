@@ -1,0 +1,56 @@
+### =========================================
+### ARCHIVO PARA PROBAR PETICIONES (REST CLIENT)
+### Sirve para enviar requests a servidores y ver respuestas
+### Cada bloque separado por ### es una petición distinta
+### =========================================
+
+
+### -------- GET A UNA WEB EXTERNA --------
+# Hace una petición GET (obtener datos)
+# En este caso, a una página real de internet
+GET https://ies21.edu.ar/
+
+###
+
+
+### -------- GET (REPETIDO) --------
+# Hace exactamente lo mismo que el anterior
+# (no cambia nada, está duplicado)
+GET https://ies21.edu.ar/
+
+###
+
+
+### -------- GET LOCAL --------
+# Hace una petición a TU servidor local
+# OJO: debe ser http (no https)
+# Esto va a ejecutar la ruta GET "/" de tu código
+GET http://localhost:3000
+
+###
+
+
+### -------- POST --------
+# Hace una petición POST (crear datos)
+# Esto en tu código crea el archivo "contenido.txt"
+# y guarda "contenido falso"
+POST http://localhost:3000
+Content-Type: text/plain
+
+###
+
+
+### -------- PUT --------
+# Hace una petición PUT (actualizar datos)
+# En tu código NO está implementado
+# Resultado: va a devolver 404
+PUT http://localhost:3000
+
+###
+
+
+### -------- DELETE --------
+# Hace una petición DELETE (borrar datos)
+# Tampoco está implementado en tu servidor
+# Resultado: 404
+DELETE http://localhost:3000
