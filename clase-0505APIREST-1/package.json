@@ -1,0 +1,13 @@
+{
+  "name": "mi-api-rest",
+  "version": "1.0.0",
+  "type": "module",
+
+  "scripts": {
+    "dev": "node --watch index.mjs"
+  },
+
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

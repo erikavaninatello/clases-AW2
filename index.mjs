@@ -1,41 +1,40 @@
-import express from 'express';
-
-// importamos las funciones
+import express from 'express'
 import {
     obtenerProductos,
     obtenerProducto,
-    eliminarProducto
-} from './funciones.mjs';
+    eliminarProducto,
+    altaProducto,
+    modificarProducto
+}
+    from './funciones.mjs'
+// import productos from './productos.mjs'
+// BD -------------
 
 
+const PUERTO = 3000
 
-// CONFIGURACIÓN DEL SERVIDOR
+const app = express()
 
-const app = express();
+app.use(express.json()) //<----- avisa a express que parsee los datos en JSON del cuerpo del mensaje hhtp
 
-const PUERTO = 3000;
+// Definiendo una API REST
 
-// RUTAS API REST
+// GET /api/v1/productos -> todos
+
+app.get('/api/v1/productos', obtenerProductos)
+
+// GET /api/v1/productos/:id -> uno por ID
+
+app.get('/api/v1/productos/:id', obtenerProducto)
+
+// POST /api/v1/productos -> dar de alta un nuevo producto
+app.post('/api/v1/productos', altaProducto)
+
+// PUT /api/v1/productos/:id -> modificar un producto
+app.put('/api/v1/productos/:id', modificarProducto)
+
+// DELETE /api/v1/productos/:id
+app.delete('/api/v1/productos/:id', eliminarProducto)
 
 
-
-// GET -> obtener todos los productos
-app.get('/api/v1/productos', obtenerProductos);
-
-
-// GET -> obtener un producto por ID
-app.get('/api/v1/productos/:id', obtenerProducto);
-
-
-// DELETE -> eliminar producto por ID
-app.delete('/api/v1/productos/:id', eliminarProducto);
-
-
-// LEVANTAR SERVIDOR
-
-
-app.listen(PUERTO, () => {
-
-    console.log(`Servidor corriendo en http://localhost:${PUERTO}`);
-
-});
+app.listen(PUERTO)
