@@ -1,0 +1,63 @@
+/// Crear la imagen
+docker build -t imagen_pg .
+
+/// Instanciar un contenedor a partir de la imagen
+docker run --name contenedor_pg -e POSTGRES_USER=root -e POSTGRES_PASSWORD=pass -e POSTGRES_DB=tienda -p 5432:5432 -d imagen_pg
+
+/// Verificar la cracion de la Base de Datos y la tabla
+
+////// Entrar al contenedor
+docker exec -it contenedor_pg bash
+
+////// Dentro del contenedor ejecutar:
+psql -U root -d tienda --password
+////// Indicar la clave
+Password: 
+
+////// Ejecutar consulta
+tienda=# SELECT * FROM productos;
+
+////// debemos ver los productos insertados... por ejemplo:
+
+  1 | CPU-001  | Procesador Intel Core i5-12400        | Intel           |    15 | 2025-02-12 14:01:21.08224
+  2 | CPU-002  | Procesador AMD Ryzen 5 5600X          | AMD             |    12 | 2025-02-12 14:01:21.08224
+  3 | MB-001   | Placa Madre ASUS PRIME B550M          | ASUS            |     8 | 2025-02-12 14:01:21.08224
+  4 | MB-002   | Placa Madre MSI B560M PRO             | MSI             |    10 | 2025-02-12 14:01:21.08224
+  5 | RAM-001  | Memoria RAM DDR4 16GB 3200MHz         | Corsair         |    20 | 2025-02-12 14:01:21.08224
+
+...
+
+Crear contenedor
+Crear contenedor de BD con postgresSQL
+
+Uso de Dockerfile
+Crear la imagen con una Dockerfile
+
+docker build -t nombre_imagen .
+Correr un contenedor
+El contenedor está basado en la imagen creada arriba
+
+docker run --name nombre_contenedor -e POSTGRES_USER=mi_usuario -e POSTGRES_PASSWORD=mi_pass -e POSTGRES_DB=mi_base_datos -p 5432:5432 -d nombre_imagen
+Instalar Docker en windows
+instalacion
+
+Lenguaje SQL REFERENCIA
+W3Schools
+
+Algunos comandos Docker
+Comando	Descripcion
+docker images	lista las imagenes (o agregar ls)
+docker build -t nombre_imagen .	Cea una imagen desde Dockerfile (-t tag) con el tag nombre_imagen, y el punto (.) hace referencia a la ubicacion del Dockerfile.
+docker build -t nombre_imagen:numero_version .	Cea una imagen desde Dockerfile con version
+docker rmi id_imagen	Borrar una imagen
+docker ps	Lista los contenedores activos
+docker ps -a	lista todos los contenedores
+docker run nombre_imagen	Inicializar un contenedor a partir de una imagen imagen
+docker run --rm nombre_imagen	rm elimina el contenedor una vez finalizada la ejecución
+docker run -d --name nombre_contenedor -p 4000:3000 nombre_imagen	Corre el contenedor [create/pull/start] (-p puerto / -d en background o daemon / --name le da un nombre). Con respecto a los puertos, el primero es el local y el segundo el del contenedor (local:contenedor)
+docker create --name nombre_contenedor nombre_imagen	Iniciar un contenedor ya creado
+docker start id_contenedor	Iniciar un contenedor ya creado
+docker stop id_contenedor	Parar un contenedor
+docker rm id_contenedor	Eliminar un contenedor
+docker exec -it nombre_contenedor bash	Entrar al contenedor interactivamente (SO linux)
+docker stats	Muestra recursos utilizados
