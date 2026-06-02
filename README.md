@@ -18,3 +18,23 @@ para separar funciones.
 3.MODELO: se encarga de la capa de datos.
 4. en vista ponemos las rutas. y AGREGAMOS OTRO MODULO PARA QUE TOME LOS DATOS Y EL USUARIO LO UTILICE PARA (VISTA PROCESA DATOS)
 
+actualizar codigo de clase
+MULTER
+VARIABLES DEL ENTORNO
+SUTER ARCHIVOS ---> MULTER
+
+
+
+
+backend --- localhost300
+   |
+   | API
+   |
+front end  (SERVIDAS ENE L MISMO DOMINIO)
+TENTO LA API COMO EL FRONT INGRESA AL MISMODOMINIO(LOCALHODT3009
+cuandos e desgargue el html el 
+
+
+
+{enctype en binario en el formulario html} para que tome la imagen 
+   
