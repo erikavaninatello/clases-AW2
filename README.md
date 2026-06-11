@@ -598,3 +598,14 @@ proyecto/
 | `const { a } = obj` | Desestructuración — atajo para extraer propiedades |
 | `process.env.X` | Accede a variables de entorno |
 | `\|\| valor` | Valor por defecto si la variable es undefined |
+
+
+
+
+
+
+
+JWT TOKENS
+
+JWT --> LLAVE AUTORIZACIONBASICA DEL SUPER ADMIN(se pueden segmentar para la informacion)
+autenticarse con las credenciales, dan una credencial de pasae libre que a su vez se le puede agregar ua fecha de caducidad , con ese pase se puede acceder a todosa los lugares si es que no se vencio expiro.
